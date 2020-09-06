@@ -6,6 +6,9 @@ spring:
     name: hello-service
 
 eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://47.101.152.143:8761/eureka/,http://47.101.152.143:8762/eureka/

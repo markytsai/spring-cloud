@@ -1,6 +1,9 @@
 server:
   port: 8761
 
+peer:
+  port: 8762
+
 
 spring:
   application:
@@ -13,6 +16,6 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://47.101.152.143:${peer.port}/eureka/
 
 
