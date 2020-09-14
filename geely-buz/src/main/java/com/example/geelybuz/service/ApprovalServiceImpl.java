@@ -1,11 +1,13 @@
 package com.example.geelybuz.service;
 
-import com.example.geelybuz.client.ApprovalService;
+import com.geely.business.train.ticketapproval.client.ApprovalService;
 import com.geely.business.train.ticketcommon.approval.HandleApprovalBody;
 import com.geely.business.train.ticketcommon.approval.request.ApplyApprovalRequest;
 import com.geely.business.train.ticketcommon.approval.response.ApplyApprovalResponse;
 import com.geely.business.train.ticketcommon.approval.response.CheckApprovalResponse;
+import com.geely.business.train.ticketcommon.approval.response.CostCenterDataResponse;
 import com.geely.business.train.ticketcommon.approval.response.Response;
+import com.geely.business.train.ticketcommon.approval.result.ApplyApprovalResult;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,26 +20,34 @@ public class ApprovalServiceImpl implements ApprovalService {
 
     @Override
     public ApplyApprovalResponse startApproval(ApplyApprovalRequest applyApprovalRequest) {
-        return null;
+        ApplyApprovalResponse response = new ApplyApprovalResponse();
+        ApplyApprovalResult result = new ApplyApprovalResult();
+        result.setId(222222222);
+        response.setResult(result);
+        return response;
     }
 
     @Override
     public CheckApprovalResponse checkApprovalFlow(Integer approvalId) {
-        return null;
+        CheckApprovalResponse response = new CheckApprovalResponse();
+        return response;
     }
 
     @Override
     public Response handleApprovalManually(Integer approvalId, HandleApprovalBody approvalBody) {
-        return null;
+        Response response = new Response();
+        return response;
     }
 
     @Override
     public Response urgeApproval(Integer approvalId) {
-        return null;
+        Response response = new Response();
+        return response;
     }
 
     @Override
     public Response closeApproval(Integer approvalId) {
-        return null;
+        Response response = new Response();
+        return response;
     }
 }
