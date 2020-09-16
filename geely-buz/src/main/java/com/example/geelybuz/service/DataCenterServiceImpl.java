@@ -94,4 +94,20 @@ public class DataCenterServiceImpl implements DataCenterService {
         BusinessSwitchResponse response = new BusinessSwitchResponse();
         return response;
     }
+
+    @Override
+    public VerifyUserResponse getVerifyPerson(String name) {
+        VerifyUserResponse verifyUserResponse = new VerifyUserResponse();
+        VerifyUserResult verifyUserResult = new VerifyUserResult();
+        verifyUserResponse.setResult(verifyUserResult);
+        return verifyUserResponse;
+    }
+
+    @Override
+    public VerifyUserResponse getUserConditons(String phoneNumber, String workNumber) {
+        VerifyUserResponse verifyUserResponse = new VerifyUserResponse();
+        VerifyUserResult verifyUserResult = new VerifyUserResult();
+        verifyUserResponse.setResult(verifyUserResult);
+        return verifyUserResponse;
+    }
 }

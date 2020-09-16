@@ -91,4 +91,25 @@ public class DataCenterController {
     PublicBillResponse publicBill(@RequestParam @NotNull String businessCode) {
         return dataCenterService.publicBill(businessCode);
     }
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+    @GetMapping({"/datacenter/userPerson/getVerifyPerson"})
+    VerifyUserResponse getVerifyPerson(@RequestParam String name){
+        return dataCenterService.getVerifyPerson(name);
+    }
+
+    /**
+     *
+     * @param phoneNumber
+     * @param workNumber
+     * @return
+     */
+    @GetMapping({"/datacenter/userPerson/getUserConditons"})
+    VerifyUserResponse getUserConditons(@RequestParam String phoneNumber, @RequestParam String workNumber) {
+        return dataCenterService.getUserConditons(phoneNumber, workNumber);
+    }
 }

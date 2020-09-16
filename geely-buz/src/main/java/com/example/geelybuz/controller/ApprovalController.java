@@ -5,7 +5,7 @@ import com.geely.business.train.ticketcommon.approval.HandleApprovalBody;
 import com.geely.business.train.ticketcommon.approval.request.ApplyApprovalRequest;
 import com.geely.business.train.ticketcommon.approval.response.ApplyApprovalResponse;
 import com.geely.business.train.ticketcommon.approval.response.CheckApprovalResponse;
-import com.geely.business.train.ticketcommon.approval.response.Response;
+import com.geely.business.train.ticketcommon.approval.response.GeelyResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +42,7 @@ public class ApprovalController {
      * @return
      */
     @PutMapping("/approvalTmc/serviceHandleApproval/{approvalId}")
-    Response handleApprovalManually(@PathVariable Integer approvalId, @RequestBody HandleApprovalBody approvalBody) {
+    GeelyResponse handleApprovalManually(@PathVariable Integer approvalId, @RequestBody HandleApprovalBody approvalBody) {
         return approvalService.handleApprovalManually(approvalId, approvalBody);
     }
 
@@ -52,7 +52,7 @@ public class ApprovalController {
      * @return
      */
     @GetMapping("/approval/urgeApproval/{approvalId}")
-    Response urgeApproval(@PathVariable Integer approvalId) {
+    GeelyResponse urgeApproval(@PathVariable Integer approvalId) {
         return approvalService.urgeApproval(approvalId);
     }
 
@@ -62,7 +62,7 @@ public class ApprovalController {
      * @return
      */
     @GetMapping("/approval/closeApproval/{approvalId}")
-    Response closeApproval(@PathVariable Integer approvalId) {
+    GeelyResponse closeApproval(@PathVariable Integer approvalId) {
         return approvalService.closeApproval(approvalId);
     }
 

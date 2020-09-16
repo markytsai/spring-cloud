@@ -6,7 +6,7 @@ import com.geely.business.train.ticketcommon.approval.request.ApplyApprovalReque
 import com.geely.business.train.ticketcommon.approval.response.ApplyApprovalResponse;
 import com.geely.business.train.ticketcommon.approval.response.CheckApprovalResponse;
 import com.geely.business.train.ticketcommon.approval.response.CostCenterDataResponse;
-import com.geely.business.train.ticketcommon.approval.response.Response;
+import com.geely.business.train.ticketcommon.approval.response.GeelyResponse;
 import com.geely.business.train.ticketcommon.approval.result.ApplyApprovalResult;
 import org.springframework.stereotype.Service;
 
@@ -34,20 +34,20 @@ public class ApprovalServiceImpl implements ApprovalService {
     }
 
     @Override
-    public Response handleApprovalManually(Integer approvalId, HandleApprovalBody approvalBody) {
-        Response response = new Response();
+    public GeelyResponse handleApprovalManually(Integer approvalId, HandleApprovalBody approvalBody) {
+        GeelyResponse response = new GeelyResponse<>();
         return response;
     }
 
     @Override
-    public Response urgeApproval(Integer approvalId) {
-        Response response = new Response();
+    public GeelyResponse urgeApproval(Integer approvalId) {
+        GeelyResponse response = new GeelyResponse<>();
         return response;
     }
 
     @Override
-    public Response closeApproval(Integer approvalId) {
-        Response response = new Response();
+    public GeelyResponse closeApproval(Integer approvalId) {
+        GeelyResponse response = new GeelyResponse();
         return response;
     }
 }
