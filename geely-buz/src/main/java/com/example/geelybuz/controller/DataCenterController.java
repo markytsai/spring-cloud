@@ -110,6 +110,6 @@ public class DataCenterController {
      */
     @GetMapping({"/datacenter/userPerson/getUserConditons"})
     VerifyUserResponse getUserConditons(@RequestParam String phoneNumber, @RequestParam String workNumber) {
-        return dataCenterService.getUserConditons(phoneNumber, workNumber);
+        return dataCenterService.getUserConditions(phoneNumber, workNumber);
     }
 }

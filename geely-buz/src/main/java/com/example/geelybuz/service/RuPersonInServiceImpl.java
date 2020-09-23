@@ -5,6 +5,9 @@ import com.geely.business.train.ticketcommon.approval.request.TrainApprovalDataR
 import com.geely.business.train.ticketcommon.approval.response.SceneDataResponse;
 import com.geely.business.train.ticketcommon.approval.response.TrainApprovalDataResponse;
 import com.geely.business.train.ticketcommon.approval.response.UserDefaultDataResponse;
+import com.geely.business.train.ticketcommon.approval.result.approvalData.ApprovalLevelData;
+import com.geely.business.train.ticketcommon.approval.result.approvalData.ApprovalUserData;
+import com.geely.business.train.ticketcommon.approval.result.approvalData.TrainApprovalDataResult;
 import com.geely.business.train.ticketcommon.approval.result.defaultScene.UserDefaultDataResult;
 import com.geely.business.train.ticketcommon.approval.result.scene.SceneDataResult;
 import com.geely.business.train.ticketcommon.approval.result.scene.TrainPolicy;
@@ -25,6 +28,39 @@ public class RuPersonInServiceImpl implements RuPersonInService {
     @Override
     public TrainApprovalDataResponse getTrainApprovalData(TrainApprovalDataRequest request) {
         TrainApprovalDataResponse response = new TrainApprovalDataResponse();
+
+        TrainApprovalDataResult result = new TrainApprovalDataResult();
+        result.setNotifyType("1");
+        result.setSmsNotifier("");
+        result.setSmsNotifierName("");
+
+        // 0 no; 1 yes
+        long time = System.currentTimeMillis();
+        String needApproval;
+        if (time % 2 == 0) {
+             needApproval = "1";
+        } else {
+             needApproval = "0";
+        }
+        // 测试默认走审批
+        result.setApprovalType("1");
+
+        List<ApprovalLevelData> approvalLevelDataResults = new ArrayList<>();
+        result.setApprovalLevelDataResults(approvalLevelDataResults);
+
+        ApprovalLevelData approvalLevelData = new ApprovalLevelData();
+        approvalLevelDataResults.add(approvalLevelData);
+        approvalLevelData.setLevel("1");
+
+        List<ApprovalUserData> approvalUserDatas = new ArrayList<>();
+        ApprovalUserData approvalUserData = new ApprovalUserData();
+        approvalUserData.setUserCode("userCode_111111");
+        approvalUserData.setName("蔡振亚");
+        approvalUserDatas.add(approvalUserData);
+
+        approvalLevelData.setApprovalUserDatas(approvalUserDatas);
+
+        response.setResult(result);
         return response;
     }
 

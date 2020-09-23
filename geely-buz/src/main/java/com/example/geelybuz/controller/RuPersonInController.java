@@ -24,7 +24,7 @@ public class RuPersonInController {
      * @param request
      * @return
      */
-    @GetMapping(value = "/ruPersonIn/getTrainApprovalData")
+    @PostMapping(value = "/ruPersonIn/getTrainApprovalData")
     TrainApprovalDataResponse getTrainApprovalData(TrainApprovalDataRequest request) {
         return ruPersonInService.getTrainApprovalData(request);
     }

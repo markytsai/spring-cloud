@@ -104,10 +104,11 @@ public class DataCenterServiceImpl implements DataCenterService {
     }
 
     @Override
-    public VerifyUserResponse getUserConditons(String phoneNumber, String workNumber) {
-        VerifyUserResponse verifyUserResponse = new VerifyUserResponse();
-        VerifyUserResult verifyUserResult = new VerifyUserResult();
-        verifyUserResponse.setResult(verifyUserResult);
-        return verifyUserResponse;
+    public VerifyUserResponse getUserConditions(String phoneNumber, String workNumber) {
+        VerifyUserResponse response = new VerifyUserResponse();
+        VerifyUserResult result = new VerifyUserResult();
+        response.setResult(result);
+        return response;
     }
+
 }
